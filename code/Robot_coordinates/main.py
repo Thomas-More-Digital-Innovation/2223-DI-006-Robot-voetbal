@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
-from roboCarTracer import Tracer, Color, ColorObject
+from var import Team1, Team2, PlayerOffenceOne, PlayerOffenceTwo, PlayerDefence, Ball
+from roboCarTracer import Tracer, Color, car
 
 
 def main():
@@ -12,15 +13,11 @@ def main():
     cam.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
 
     # set the mask filter colors
-    color_team_1 = Color(np.array([90, 100, 50]), np.array([130, 255, 255]), 'blue')
-    color_team_2 = Color(np.array([160, 50, 50]), np.array([200, 255, 255]), 'pink')
-    color_player = Color(np.array([0, 125, 0]), np.array([30, 255, 255]), 'yellow')
-    color_ball = Color(np.array([0, 180, 50]), np.array([15, 255, 255]), 'orange')
+    color_team_1 = Color(np.array(Team1.LOWER_VAL.value), np.array(Team1.UPPER_VAL.value), Team1.COLOR_STRING.value)
+    color_team_2 = Color(np.array(Team2.LOWER_VAL.value), np.array(Team2.UPPER_VAL.value), Team2.COLOR_STRING.value)
     all_colors_list = [
         color_team_1, 
         color_team_2, 
-        # color_player, 
-        # color_ball
         ]
 
     # for each frame
@@ -37,12 +34,11 @@ def main():
             color.contours = Tracer.get_contours(color.mask)
 
             # get the center point of every contour
-            center_points_list = Tracer.get_contours_center_point(color.contours)
+            color.color_positions = Tracer.get_contours_center_point(color.contours)
 
-            # set all found color objects
-            for center_point in center_points_list:
-                ColorObject(color.color, center_point)
-                frame = Tracer.draw_center_point(frame, center_point)
+        x = Tracer.compare_distance_center_points(color_team_1.color_positions, color_team_2.color_positions)
+        
+        frame = Tracer.draw_car_skeleton(frame, x)
 
         # display cam
         cv2.imshow('Webcam', frame)
