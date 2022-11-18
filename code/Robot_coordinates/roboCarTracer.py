@@ -48,9 +48,10 @@ class Tracer:
 
     def draw_car_skeleton(frame, coordinates):
         if coordinates:
-            cv2.line(frame, coordinates[0], coordinates[1], (255,255,255), 4)
-            cv2.circle(frame, coordinates[0], 7, (255, 255, 0), -1)
-            cv2.circle(frame, coordinates[1], 7, (0, 0, 255), -1)
+            print(coordinates)
+            cv2.line(frame, coordinates[0], coordinates[1], (255,255,255), 2)
+            cv2.circle(frame, coordinates[0], 5, (255, 255, 0), -1)
+            cv2.circle(frame, coordinates[1], 5, (0, 0, 255), -1)
         
         return frame
 
