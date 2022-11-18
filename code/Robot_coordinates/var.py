@@ -1,12 +1,12 @@
 from enum import Enum
 
 class TracingParams(Enum):
-    MIN_AREA_COLOR = 700
+    MIN_AREA_COLOR = 250
     MAX_DISTANCE_BETWEEN_COLORS = 1000
 
 class Team1(Enum):
-    LOWER_VAL = [90, 100, 50]
-    UPPER_VAL = [130, 255, 255]
+    LOWER_VAL = [90, 50, 50]
+    UPPER_VAL = [150, 255, 255]
     COLOR_STRING = 'blue'
 
 

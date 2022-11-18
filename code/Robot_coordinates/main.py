@@ -9,7 +9,7 @@ def main():
     cam = cv2.VideoCapture(0) 
 
     # set capturing resolution
-    cam.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
+    cam.set(cv2.CAP_PROP_FRAME_WIDTH, 1080)
     cam.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
 
     # set the mask filter colors
