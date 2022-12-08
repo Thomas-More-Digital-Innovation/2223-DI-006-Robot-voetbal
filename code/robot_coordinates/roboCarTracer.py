@@ -63,7 +63,7 @@ class Car:
         contour_center_2 = get_contours_center_point(self.color_2.mask)
         self.distance_between = compare_distance_center_points(contour_center_1, contour_center_2)
         self.coord, self.angle = get_coord_and_angle(self.distance_between)
-
+ 
         return self.coord, self.angle
 
     def draw(self, frame:np.ndarray) -> np.ndarray:
