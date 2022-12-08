@@ -56,7 +56,15 @@ class Ball:
 
 
 class Playfield:
-    def __init__(self, space):
+    # Singleton Design Pattern
+    __instance = None
+    def __new__(cls):
+        if(cls.__instance is None):
+            cls.__instance = super(Playfield, cls).__new__(cls)
+        return cls.__instance
+
+    def set_borders(self, space):
+            
         self.map_borders = [
             # field borders
             [(-20, -20), (screen_width*2+40, 40)],              # top
@@ -101,7 +109,8 @@ class PyGame2D:
         self.reward = 0
         self.done = False
 
-        self.space = pymunk.Space()
+        self.Playfield = Playfield() 
+        self.Playfield.set_borders(self.space)
         self.ball = Ball(self.space, (screen_width/2, screen_height/2), collision_type=1)
         self.car_1 = Car(self.space, (screen_width*0.56, screen_height*0.5))
 
