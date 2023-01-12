@@ -27,7 +27,7 @@ This framework does most of the processing. It can extract cars and balls from i
 - lower_val: the minimum HSV value treshold
 - upper_val: the maximum HSV value treshold
 - This Color object contains a value set of colors.
-    
+####
     red.create_mask(frame)
 - frame: when passed a frame in this function, it will generate a mask with its colors.
 
