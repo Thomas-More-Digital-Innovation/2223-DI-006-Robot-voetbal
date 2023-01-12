@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "../../robotvoetbal"
+		},
+		{
+			"name": "robocup",
+			"path": ".."
+		}
+	],
+	"settings": {}
+}
