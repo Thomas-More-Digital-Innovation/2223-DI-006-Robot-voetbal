@@ -64,7 +64,7 @@ const String postForms1 = "<html>\
   <body>\
     <h1>Forward (sec)</h1><br>\
     <h1>";
-const String postForms2 = "
+const String postForms2 = "\
     </h1><br>\
     <form method=\"post\" enctype=\"text/plain\" action=\"/postForward/\">\
       <input type=\"text\" name=\'{\"hello\": \"world\", \"trash\": \"\' value=\'\"}\'><br>\
@@ -190,7 +190,7 @@ void handleBackward() {
   server.send(200 , "text/plain", "Backward");
 }
 void handleTurnLeft() {
-  CTime = millis() +1000;
+  CTime = millis() +250;
   while (CTime > millis()) {
     digitalWrite(leftMotorPin_forward, LOW);
     digitalWrite(leftMotorPin_backward, HIGH);
@@ -205,7 +205,7 @@ void handleTurnLeft() {
 }
 
 void handleTurnRight() {
-  CTime = millis() +1000;
+  CTime = millis() +250;
   while (CTime > millis()) {
     digitalWrite(leftMotorPin_forward, HIGH);
     digitalWrite(leftMotorPin_backward, LOW);
