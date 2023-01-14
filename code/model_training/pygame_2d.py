@@ -60,7 +60,7 @@ class Playfield:
     __instance = None   # Class variable to keep track if the instance
     def __new__(cls):   # Dunder method that gets called when creating an Playfield object (even before __init__)
         if(cls.__instance is None):     # If the class variable __instance is None
-            cls.__instance = super(Playfield, cls).__new__(cls)     # Than set the class variable __instance to a Playfield object (use super().__new__() methode)
+            cls.__instance = super(Playfield, cls).__new__(cls)     # Than set the class variable __instance to a new created Playfield object (use super().__new__() methode)
                                                                     # If __instance is not None, than do not create a new Playfield object
         return cls.__instance   # return de __instance variable -> Playfield object
 
