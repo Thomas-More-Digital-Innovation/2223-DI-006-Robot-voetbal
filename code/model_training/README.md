@@ -2,6 +2,10 @@
 
 The goal of this part of the project is to train a custom model with reinforcement learning that can control robot cars based on incoming coordinates and angles from the directory robot_coordinates. To manage the RL algorithms, we use Stable Baselines 3, which is built on the PyTorch framework. To create a custom 2D environment, we use Pygame in combination with the Pymunk physics engine. Later we initialize this environment in OpenAI gym.
 
+![example image of env](example.png)
+
+# Files :page_facing_up:
+
 ## pygame_2d.py
 Here, you create your custom 2d pygame environment, and use PyMunk fysics. 
 ### 
@@ -25,7 +29,7 @@ You'll see that some code is commented out because I was still working on settin
 ## load_and_play.py
 When you want to see how your trained model behaves, you can load the model into this file. A new environment is then started and the model is run. 
 
-##  :information_source: Sources 
+# Sources :information_source:  
 Learning tutorial:    https://youtu.be/XbWhJdQgi7E
 ####
 OpenAI gym:           https://gymnasium.farama.org
