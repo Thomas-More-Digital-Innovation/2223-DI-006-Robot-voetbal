@@ -1,10 +1,10 @@
-# Robot coordinates
+# Robot coordinates :car:
 An OpenCV software for detecting color ranges and recognizing patterns in color combinations. 
 
 ## Introduction
 This folder contains the code for retrieving robot car and ball coordinates from video footage. You can easily adapt the code to your own situation. Before you start, you need to mount some collored paper (postips) on the robot cars and you need a ball with a distinctive color compared to the surface.
 
-## How to run?
+## How to run? :running:
 ### install requirements
     pip install -r requirements
 
@@ -12,14 +12,14 @@ This folder contains the code for retrieving robot car and ball coordinates from
     python3 exampleCode.py
 The software shows 2 windows, the first are the camera images, the second are masked color images. On these windows you see drawn skeletons of the color combinations found.
 
-## Write your own 
+## Write your own :pencil2:
 ### main.py
 Here you can write your own code and create your own color combinations. Study the sample code to understand the framework before you start. First you need to initialize the colors, the cars and the ball. If you have a lot of cars, you can make a list for later. 
 
 ### var.py
 Define the colors in this file by following the previous class structure. You can refine and adjust the color ranges here. The color value is in HSV representation. You can check the detected colors in the masked window when you run your code.
 
-## Framework
+## Framework :page_with_curl:
 ### roboCarTracer.py
 This framework does most of the processing. It can extract cars and balls from images based on their colors. Be sure to install its dependecies (opencv-python and numpy).
 #### Color()
