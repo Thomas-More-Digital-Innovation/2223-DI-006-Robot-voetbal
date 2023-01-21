@@ -18,7 +18,7 @@ def get_contours_center_point(mask:np.ndarray) -> list:
     return list
 
 def compare_distance_center_points(position_list_1:list, position_list_2:list) -> list:
-    list = ((10,20), (30,40), TracingParams.MAX_DISTANCE_BETWEEN_COLORS.value)
+    list = ((0,0), (0,0), TracingParams.MAX_DISTANCE_BETWEEN_COLORS.value)
     for pos1 in position_list_1:
         for pos2 in position_list_2:
             dis = ((pos2[0] - pos1[0]) ** 2 + (pos2[1] - pos1[1]) ** 2) ** 0.5
